@@ -57,9 +57,9 @@ def send_sms_single(phone_num, template_id, template_param_list):
     :param template_param_list: 短信模板所需参数列表，例如:【验证码：{1}，描述：{2}】，则传递参数 [888,666]按顺序去格式化模板
     :return:
     """
-    appid = "1400676298"  # 自己应用ID
-    appkey = "faf71fc03b89444fe7aeb7bd476a6ee7"  # 自己应用Key
-    sms_sign = "何书欣公众号"  # 自己腾讯云创建签名时填写的签名内容（使用公众号的话这个值一般是公众号全称或简称）
+    appid = " "  # 自己应用ID
+    appkey = " "  # 自己应用Key
+    sms_sign = ""  # 自己腾讯云创建签名时填写的签名内容（使用公众号的话这个值一般是公众号全称或简称）
     sender = SmsSingleSender(appid, appkey)
     try:
         response = sender.send_with_param(86, phone_num, template_id, template_param_list, sign=sms_sign)
@@ -79,7 +79,7 @@ def send_sms_multi(phone_num_list, template_id, param_list):
     """
     appid = "1400676298"  # 自己应用ID
     appkey = "faf71fc03b89444fe7aeb7bd476a6ee7"  # 自己应用Key
-    sms_sign = "何书欣公众号"  # 自己腾讯云创建签名时填写的签名内容（使用公众号的话这个值一般是公众号全称或简称）
+    sms_sign = " "  # 自己腾讯云创建签名时填写的签名内容（使用公众号的话这个值一般是公众号全称或简称）
     sender = SmsMultiSender(appid, appkey)
     try:
         response = sender.send_with_param(86, phone_num_list, template_id, param_list, sign=sms_sign)
@@ -87,9 +87,9 @@ def send_sms_multi(phone_num_list, template_id, param_list):
         response = {'result': 1000, 'errmsg': "网络异常发送失败"}
     return response
 
-url = 'http://www.weather.com.cn/weather/101110301.shtml'
-phone_number = ['18700122035','13891133843','15909115892']
-template_id= '1398986'
+url = 'http://www.weather.com.cn/weather/101110301.shtml' #填写天气网站的URL weather.com.cn
+phone_number = ['phone1','phone2','phone3']
+template_id= ''#短信模板ID
 print(__name__)
 
 if __name__ == "__main__":
